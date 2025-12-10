@@ -43,3 +43,4 @@ jobs:
         echo "Deployed to Prod"
         echo "username = ${{vars.usename}}"
         echo "password = ${{secrets.password}}"
+        
