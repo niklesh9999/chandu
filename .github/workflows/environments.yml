@@ -11,6 +11,7 @@ jobs:
         run: 
           echo "test deployment"
           echo "username = ${{vars.usename}}"
+          echo "password = ${{secrets.password}}"
   dev:
     runs-on: ubuntu-latest
     environment: dev
@@ -19,6 +20,7 @@ jobs:
         run: 
         echo "Deployed to Dev"
         echo "username = ${{vars.usename}}"
+        echo "password = ${{secrets.password}}"
     
 
   stage:
@@ -29,6 +31,7 @@ jobs:
         run: 
         echo "Deployed to Stage"
         echo "username = ${{vars.usename}}"
+        echo "password = ${{secrets.password}}"
 
   prod:
     runs-on: ubuntu-latest
@@ -39,3 +42,4 @@ jobs:
         run: 
         echo "Deployed to Prod"
         echo "username = ${{vars.usename}}"
+        echo "password = ${{secrets.password}}"
