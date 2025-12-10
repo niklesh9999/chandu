@@ -8,38 +8,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test deployment
-        run: 
+        run: |
           echo "test deployment"
-          echo "username = ${{vars.usename}}"
-          echo "password = ${{secrets.password}}"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
+
   dev:
     runs-on: ubuntu-latest
+    needs: test
     environment: dev
     steps:
       - name: Deploy to Dev
-        run: 
-        echo "Deployed to Dev"
-        echo "username = ${{vars.usename}}"
-        echo "password = ${{secrets.password}}"
-    
+        run: |
+          echo "Deployed to Dev"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
 
   stage:
     runs-on: ubuntu-latest
+    needs: dev
     environment: stage
     steps:
       - name: Deploy to Stage
-        run: 
-        echo "Deployed to Stage"
-        echo "username = ${{vars.usename}}"
-        echo "password = ${{secrets.password}}"
+        run: |
+          echo "Deployed to Stage"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
 
   prod:
     runs-on: ubuntu-latest
+    needs: stage
     environment: prod
-    
     steps:
       - name: Deploy to Prod
-        run: 
-        echo "Deployed to Prod"
-        echo "username = ${{vars.usename}}"
-        echo "password = ${{secrets.password}}"
+        run: |
+          echo "Deployed to Prod"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
