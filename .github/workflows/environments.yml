@@ -8,31 +8,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test deployment
-        run: echo "test deployment"
-             echo "username = ${{vars.usename}}"
+        run: 
+          echo "test deployment"
+          echo "username = ${{vars.usename}}"
   dev:
     runs-on: ubuntu-latest
     environment: dev
     steps:
       - name: Deploy to Dev
-        run: echo "Deployed to Dev"
-             echo "username = ${{vars.usename}}"
+        run: 
+        echo "Deployed to Dev"
+        echo "username = ${{vars.usename}}"
     
 
   stage:
     runs-on: ubuntu-latest
     environment: stage
-    needs: dev
     steps:
       - name: Deploy to Stage
-        run: echo "Deployed to Stage"
-             echo "username = ${{vars.usename}}"
+        run: 
+        echo "Deployed to Stage"
+        echo "username = ${{vars.usename}}"
 
   prod:
     runs-on: ubuntu-latest
     environment: prod
-    needs: stage
+    
     steps:
       - name: Deploy to Prod
-        run: echo "Deployed to Prod"
-             echo "username = ${{vars.usename}}"
+        run: 
+        echo "Deployed to Prod"
+        echo "username = ${{vars.usename}}"
