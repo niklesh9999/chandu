@@ -1,16 +1,15 @@
-name: Artifact Example
+name: ci/cd
 
-on: workflow_dispatch
-
+on: 
+  push:
+    branches: ["main"]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+  demo:
+  runs-on: ubntun-latest
 
-      - run: echo "hello" > file.txt
+  steps:
+    - name: code checkout
+      uses: action/checkout@v3
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: sample-artifact
-          path: file.txt
+    - name: deployed world
+      run: echo "hello world"
