@@ -10,7 +10,7 @@ jobs:
 
       - run: echo "hello" > file.txt
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: sample-artifact
           path: file.txt
