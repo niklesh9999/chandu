@@ -1,0 +1,16 @@
+name: Artifact Example
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: echo "hello" > file.txt
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: sample-artifact
+          path: file.txt
