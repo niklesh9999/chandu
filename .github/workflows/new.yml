@@ -5,17 +5,19 @@ on:
 
 
 jobs:
-  enviroments:
+  test:
     runs-on: ubuntu-latest
       steps:
-        - name: environment
-          run: echo " deploy to environment"
+        - name: test
+          run: echo " deploy to test"
                echo "username = {${vars.username}}"
                echo "password = ${{secrate.password}}"
 
 
   dev:
     runs-on: ubuntu-latest
+    needs: test
+    environment: dev
       steps:
          - name: dev
            run:
@@ -25,6 +27,8 @@ jobs:
 
   stage:
     runs-on: ubuntu-latest
+    needs: dev
+    environment: stage
       steps:
         - name: stage
           run:
@@ -34,6 +38,8 @@ jobs:
 
   prod:
     runs-on: ubuntu-latest
+    needs: prod
+    environment: prod
       steps:
         - name: prod
           run:
