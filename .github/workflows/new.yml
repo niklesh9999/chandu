@@ -10,7 +10,7 @@ jobs:
       steps:
         - name: test
           run: echo " deploy to test"
-               echo "username = {${vars.username}}"
+               echo "username = ${{vars.username}}"
                echo "password = ${{secrate.password}}"
 
 
