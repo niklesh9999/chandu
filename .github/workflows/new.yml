@@ -3,48 +3,49 @@ name: environment
 on:
   workflow_dispatch:
 
-
 jobs:
+
   test:
     runs-on: ubuntu-latest
-      steps:
-        - name: test
-          run: echo " deploy to test"
-               echo "username = ${{vars.username}}"
-               echo "password = ${{secrate.password}}"
-
+    steps:
+      - name: test
+        run: |
+          echo "deploy to test"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
 
   dev:
     runs-on: ubuntu-latest
     needs: test
     environment: dev
-      steps:
-         - name: dev
-           run:
-              echo "deploy to dev"
-              echo "username = ${{vars.username}}"
-              echo "password = ${{secrate.password}}"
+    steps:
+      - name: dev
+        run: |
+          echo "deploy to dev"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
 
   stage:
     runs-on: ubuntu-latest
     needs: dev
     environment: stage
-      steps:
-        - name: stage
-          run:
-            echo "deploy to stage"
-            echo "username = ${{vars.username}}"
-            echo "password = ${{secrate.password}}"
+    steps:
+      - name: stage
+        run: |
+          echo "deploy to stage"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
 
   prod:
     runs-on: ubuntu-latest
-    needs: prod
+    needs: stage
     environment: prod
-      steps:
-        - name: prod
-          run:
-            echo "depolyed  to prod"
-            echo "username = ${{vars.username}}"
-            echo "password = ${{secrate.password}}"
+    steps:
+      - name: prod
+        run: |
+          echo "deployed to prod"
+          echo "username = ${{ vars.username }}"
+          echo "password = ${{ secrets.password }}"
+
             
     
