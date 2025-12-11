@@ -1,0 +1,44 @@
+name: environment
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  enviroments:
+    runs-on: ubuntu-latest
+      steps:
+        - name: environment
+          run: echo " deploy to environment"
+               echo "username = {${vars.username}}"
+               echo "password = ${{secrate.password}}"
+
+
+  dev:
+    runs-on: ubuntu-latest
+      steps:
+         - name: dev
+           run:
+              echo "deploy to dev"
+              echo "username = ${{vars.username}}"
+              echo "password = ${{secrate.password}}"
+
+  stage:
+    runs-on: ubuntu-latest
+      steps:
+        - name: stage
+          run:
+            echo "deploy to stage"
+            echo "username = ${{vars.username}}"
+            echo "password = ${{secrate.password}}"
+
+  prod:
+    runs-on: ubuntu-latest
+      steps:
+        - name: prod
+          run:
+            echo "depolyed  to prod"
+            echo "username = ${{vars.username}}"
+            echo "password = ${{secrate.password}}"
+            
+    
