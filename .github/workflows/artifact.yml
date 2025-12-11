@@ -9,7 +9,7 @@ jobs:
 
   steps:
     - name: code checkout
-      uses: action/checkout@v3
+      uses: actions/checkout@v4
 
     - name: deployed world
       run: echo "hello world"
