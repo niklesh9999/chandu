@@ -3,32 +3,42 @@ name: environment 1
 on:
   workflow_despatch:
     runs-on: ubuntu-latest
+jobs:
+    
 
-test:
-  steps:
-    - name: "deployed to test"
-      run: 
-         echo "username = {{vars.username}}"
-         echo "password = {{secreate.password}}"
+  test:
+    steps:
+      runs-on: ubuntu-latest
+        - name: "deployed to test"
+          environment: test
+          run: 
+            echo "username = ${{vars.username}}"
+            echo "password = ${{secreate.password}}"
 
-dev:
-  steps:
-    - name: "deployed to dev"
-      run: 
-         echo "username = {{vars.username}}"
-         echo "password = {{secreate.password}}" 
+  dev:
+    steps:
+      runs-on: ubuntu-latest
+        - name: "deployed to dev"
+          enviromnet: dev
+          run: 
+            echo "username = ${{vars.username}}"
+            echo "password = ${{secreate.password}}" 
 
-stage:
-  steps:
-    - name: "deployed to stage"
-      run: 
-         echo "username = {{vars.username}}"
-         echo "password = {{secreate.password}}"        
+  stage:
+    steps:
+      runs-on: ubuntu-latest
+        - name: "deployed to stage"
+          environment: stage
+          run: 
+            echo "username = ${{vars.username}}"
+            echo "password = ${{secreate.password}}"        
 
-prod:
-  steps:
-    - name: "deployed to prod"
-      run: 
-         echo "username = {{vars.username}}"
-         echo "password = {{secreate.password}}"
+  prod:
+    steps:
+      runs-on: ubuntu-latest
+        - name: "deployed to prod"
+          environment: prod
+          run: 
+            echo "username = ${{vars.username}}"
+            echo "password = ${{secreate.password}}"
          
