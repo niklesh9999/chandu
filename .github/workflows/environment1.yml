@@ -1,0 +1,34 @@
+name: environment 1
+
+on:
+  workflow_despatch:
+    runs-on: ubuntu-latest
+
+test:
+  steps:
+    - name: "deployed to test"
+      run: 
+         echo "username = {{vars.username}}"
+         echo "password = {{secreate.password}}"
+
+dev:
+  steps:
+    - name: "deployed to dev"
+      run: 
+         echo "username = {{vars.username}}"
+         echo "password = {{secreate.password}}" 
+
+stage:
+  steps:
+    - name: "deployed to stage"
+      run: 
+         echo "username = {{vars.username}}"
+         echo "password = {{secreate.password}}"        
+
+prod:
+  steps:
+    - name: "deployed to prod"
+      run: 
+         echo "username = {{vars.username}}"
+         echo "password = {{secreate.password}}"
+         
