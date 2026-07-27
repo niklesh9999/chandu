@@ -1,0 +1,30 @@
+[33mcommit 0c30d15e6a9f1b18699fbd2150ef5721cf5b357b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: kahalkar <nikleshkahalkar123@gmail.com>
+Date:   Mon Jul 27 18:37:29 2026 +0530
+
+    new commit
+
+[33mcommit c4b977c7d2133a800fca4d0dd5f30beaddcea5de[m
+Author: kahalkar <nikleshkahalkar123@gmail.com>
+Date:   Mon Jul 27 18:14:23 2026 +0530
+
+    Ignore Terraform generated files
+
+[33mcommit d69b7e3c7d845c234854acd4a8982e41190fcdb7[m
+Merge: 4f6c7b6 a5db33b
+Author: kahalkar <nikleshkahalkar123@gmail.com>
+Date:   Mon Jul 27 18:08:16 2026 +0530
+
+    Merge branch 'main' of https://github.com/niklesh9999/kaka
+
+[33mcommit 4f6c7b6b964ea0757659ffc34b68f8a130de87bb[m
+Author: kahalkar <nikleshkahalkar123@gmail.com>
+Date:   Mon Jul 27 17:57:46 2026 +0530
+
+    first commit
+
+[33mcommit a5db33b96df39383856d6fb8b728445e2ffff026[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: niklesh9999 <121636660+niklesh9999@users.noreply.github.com>
+Date:   Mon Jul 27 17:48:20 2026 +0530
+
+    Initial commit
